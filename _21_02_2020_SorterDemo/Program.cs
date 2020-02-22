@@ -12,12 +12,24 @@ namespace _21_02_2020_SorterDemo
 
         static void Main(string[] args)
         {
+
             int[] arrInput = new int[20000];
 
             for (int i = 0; i < arrInput.Length; i++)
             {
                 arrInput[i] = random.Next(-1000, 1000);
             }
+
+            Sorter sorter = new SortBubble();
+
+            sorter.AddStart(new StartStopSort(sorter.Start));
+            sorter.AddStop(new StartStopSort(sorter.Stop));
+
+            sorter.Sort(arrInput);
+
+            Console.WriteLine(sorter.GetTimeSort);
+           
+
 
 
             Console.ReadKey();

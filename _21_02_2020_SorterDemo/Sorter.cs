@@ -8,6 +8,9 @@ namespace _21_02_2020_SorterDemo
 {
     abstract class Sorter
     {
+        private long _startTime;
+        private long _stopTime;
+
         #region ---===   Protected   ===---
 
         protected StartStopSort _start;
@@ -36,6 +39,25 @@ namespace _21_02_2020_SorterDemo
             }
         }
 
+        public void Start(DateTime date)
+        {
+             _startTime = date.Ticks;
+        }
+        
+
+        public void Stop (DateTime date)
+        {
+             _stopTime = date.Ticks;
+        }
+
+        public long GetTimeSort
+        {
+            get
+            {
+                return _stopTime - _startTime;
+            }
+        }
+
         #endregion
 
         #region ---===   Abstract Method   ===---
@@ -56,6 +78,18 @@ namespace _21_02_2020_SorterDemo
         }
 
         #endregion
+
+        public void AddStart(StartStopSort start)
+        {
+            _start += start;
+        }
+
+        public void AddStop(StartStopSort stop)
+        {
+            _stop += stop;
+        }
+
+
 
     }
 }

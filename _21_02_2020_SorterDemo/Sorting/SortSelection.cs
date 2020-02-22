@@ -12,6 +12,8 @@ namespace _21_02_2020_SorterDemo
 
         public override void Sort(int[] arr)
         {
+            _start?.Invoke(DateTime.Now);
+
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 int idxOfMin = i;
@@ -32,6 +34,8 @@ namespace _21_02_2020_SorterDemo
                     idxOfMin = i;
                 }
             }
+
+            _stop?.Invoke(DateTime.Now);
         }
 
         #endregion

@@ -12,6 +12,8 @@ namespace _21_02_2020_SorterDemo
 
         public override void Sort(int[] arr)
         {
+            _start?.Invoke(DateTime.Now);
+
             for (int i = 0; i < arr.Length; i++)
             {
                 for (int j = i + 1; j < arr.Length; j++)
@@ -23,9 +25,11 @@ namespace _21_02_2020_SorterDemo
                     }
                 }
             }
+
+            _stop?.Invoke(DateTime.Now);
         }
 
         #endregion
-
+        
     }
 }
