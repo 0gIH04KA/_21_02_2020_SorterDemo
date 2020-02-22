@@ -14,6 +14,7 @@ namespace _21_02_2020_SorterDemo
         #region ---===   Protected   ===---
 
         protected StartStopSort _start;
+
         protected StartStopSort _stop;
 
         protected int _swapCount;
